@@ -24,7 +24,7 @@
    ```
    post /api/create_chanel
    
-   get  /api/get_chanel_inf
+   get  /api/get_chanel_inf{chanel_id}
    return data from db
 
    post /api/change_owner
