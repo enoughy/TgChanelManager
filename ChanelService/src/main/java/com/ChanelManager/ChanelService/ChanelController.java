@@ -1,5 +1,8 @@
 package com.ChanelManager.ChanelService;
 
+import com.ChanelManager.DTO.ChanelDTO;
+import com.ChanelManager.DTO.ChangeOwnerDTO;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -7,23 +10,20 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class ChanelController {
 
-    @PostMapping("/chanel_config_schedul/{chanel_id}")
-    public ResponseEntity<?> configSchedule(@PathVariable("chanel_id") Long chanelId) {
-        return ResponseEntity.ok().build();
-    }
+  @PostMapping("/create_chanel")
+  public ResponseEntity<?>
+  createChanel(@Valid @RequestBody ChanelDTO chanelDto) {
+    return ResponseEntity.ok().build();
+  }
 
-    @PostMapping("/create_chanel")
-    public ResponseEntity<?> createChanel() {
-        return ResponseEntity.ok().build();
-    }
+  @PostMapping("/change_owner")
+  public ResponseEntity<?>
+  changeOwner(@Valid @RequestBody ChangeOwnerDTO changeOwnerDto) {
+    return ResponseEntity.ok().build();
+  }
 
-    @GetMapping("/get_chanel_inf")
-    public ResponseEntity<?> getChanelInfo() {
-        return ResponseEntity.ok().build();
-    }
-
-    @PostMapping("/change_owner")
-    public ResponseEntity<?> changeOwner() {
-        return ResponseEntity.ok().build();
-    }
+  @GetMapping("/get_chanel_inf/{chanelId}")
+  public ResponseEntity<?> getChanelInfo(@PathVariable Long chanelId) {
+    return ResponseEntity.ok().build();
+  }
 }
